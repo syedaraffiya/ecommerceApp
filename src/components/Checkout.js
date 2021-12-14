@@ -2,7 +2,7 @@ import React from "react";
 import Subtotal from "./Subtotal";
 import {useStateValue} from"./StateProvider";
 import ProductCart from "./ProductCart";
-import { NavItem } from "react-bootstrap";
+
 
 function Checkout(){
     const [{basket}] = useStateValue();
@@ -25,7 +25,7 @@ function Checkout(){
                             id={item.id}
                             title={item.title}
                             image={item.image}
-                            price={item.price}
+                            
                             rating={item.rating}/>
                         ))}
                     </div>

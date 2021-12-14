@@ -33,7 +33,8 @@ import {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app)
   // const db = firebase.firestore()
- const auth = getAuth(app)
+ const auth = getAuth(app);
+ const db = getDatabase(app);
 
  export {
    auth,
@@ -49,5 +50,5 @@ const analytics = getAnalytics(app)
    onChildAdded,
    child,
    get,
-  
+  db,
  };

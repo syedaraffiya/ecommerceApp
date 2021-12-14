@@ -62,7 +62,7 @@ export default function SearchAppBar() {
   console.log("my basket",basket)
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static"  style={{backgroundColor:"black"}}>
+      <AppBar position="static"  style={{backgroundColor:"darkcyan"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -79,7 +79,7 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-      Ecommerce Website
+    Hotel Management App
           </Typography>
           <Search>
             <SearchIconWrapper>

@@ -1,10 +1,12 @@
 import React from "react" ;
 import "./login.css";
 // import { useState } from "react";
-import { useNavigate } from "react-router";
-import { ref,set, onValue } from "./firebase";
+
+import { db,ref, onValue,  } from "./firebase";
 import {useState} from "react"
-import { auth,createUserWithEmailAndPassword } from "./firebase";
+import { auth, signInWithEmailAndPassword } from "./firebase";
+import { Link,useNavigate } from "react-router-dom";
+
 //  import firebase from "firebase";
 //  import { auth } from "./firebase";
 // import { useNavigate } from "react-router";
@@ -13,100 +15,72 @@ import { auth,createUserWithEmailAndPassword } from "./firebase";
 // import { useHistory } from 'react-router-dom';
 
 
-function Login(){
-  const navigate = useNavigate();
+function Login() {
+ const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const navigate = useNavigate();
-  const login = (e) => {
-  e.preventDefault();
-     let obj = {
-  email,
-  password,
-  };
-  createUserWithEmailAndPassword(auth,obj.email,obj.password) 
-//   .then((res)=>{
-//     console.log(res.user.uid);
-//     setEmail("")
-//     setPassword("");
-//   })
-//   .catch((err)=>{
-//     console.log(err)
-//   })
-//   console.log(obj);
-// };
+ 
+  const loginuser = (e) => {
+    e.preventDefault();
+    let obj = {
+      email,
+      password,
+    };
+    signInWithEmailAndPassword(auth, obj.email, obj.password)
+      .then((succes) => {
+        console.log("User Sign In Successfully ", succes);
+        const refrence = ref(db,`/users/${succes.user.uid}`);
 
+        onValue(refrence, (snapshot) => {
+          if (snapshot.exists()) {
+            console.log(snapshot.val());
+            let userObj = snapshot.val();
+            // navigate("/home", { state: userObj });
+          }
+        });
 
-
-.then((succes) => {
-  console.log("User Sign In Successfully ", succes);
-  const refrence = ref( `/users/${succes.user.uid}`);
-
-  onValue(refrence, (snapshot) => {
-    if (snapshot.exists()) {
-      console.log(snapshot.val());
-      let userObj = snapshot.val();
-      navigate("/", { state: userObj });
-    }
-  });
-
-  setEmail("");
-  setPassword("");
-})
-.catch((err) => {
-  console.log(err.message);
-});
-console.log(obj);
-};
-
-const signUp = (e) => {
-  e.preventDefault();
-  let obj = {
-  
-    email,
-    password,
-  };
-  createUserWithEmailAndPassword(auth, obj.email, obj.password)
-    .then((res) => {
-      let uid = res.user.uid;
-      console.log(uid);
-      obj.uid = uid;
-      const refrence = ref( `/users/${obj.uid}`);
-      set(refrence, obj).then(() => {
         setEmail("");
         setPassword("");
-       
-        alert("user created Successfully");
+        navigate("/Home")
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
-    })
-    .catch((err) => {
-      console.log(err.message);
-    });
+    console.log(obj);
+  };
+ 
 
-  console.log(obj);
-};
+
  
     return(
         <div className="login">
             
             <img className="login__logo" 
-            src="https://archive.org/download/amazon-logo/amazon-logo.png"/>
+            src="https://www.aliceinfoweb.com/admin/images/blog/hotal_booking.png"/>
         
             <div className="login__container">
                 <h1>Sign In </h1>
-                <form onSubmit={(e)=>login(e)}>
+                <form onSubmit={(e)=>loginuser(e)}>
                     <h4>E-mail</h4>
                     <input value={email} type="email" onChange={(e)=> setEmail(e.target.value)}></input>
 
                     <h4>Password</h4>
 
-                            <input value={password} type="password "onChange={(e)=> setPassword(e.target.value)}></input>
+                    <input
+             style={{margin:6}}
+              value={password}
+              placeholder="Enter Password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+                           
         <div>
-                    <button  type="submit" className="login__signInButton"> submit</button>
+                    <button onChange={onValue} onClick={loginuser} type="submit" className="login__signInButton"> submit</button>
                     </div>
                 </form>
-                <p>By signing-up ,you agree to Amazon's Term and Condition</p>
-                <button onClick={signUp}className="login__registerButton">Create your Amazon Account</button>
+                <p>By signing-up </p>
+               
+               
             </div>
         </div>
     )

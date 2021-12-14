@@ -1,8 +1,8 @@
 .login{
     font-size: 150%;
     margin: 30px;
-    background-color:rgb(235, 255, 255);
-    height: 100vh;
+    background-color:rgb(242, 255, 255);
+    height: 100%;
    align-items: center;
  
     display: flex;
@@ -23,9 +23,9 @@
 }
 .login_logo{
     width: 100px;
-    margin: 30px;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
   
 
 }

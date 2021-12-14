@@ -25,12 +25,13 @@ console.log("basket content",basket)
     return(
         <div className="product">
             <div className="product__info">
-                <p>{title}</p>
-                <p className="product__price">
+                <h3>{title}</h3>
+                
+                {/* <p className="product__price">
                     <small>$</small>
                     <strong>{price}</strong>
-                </p>
-                <div className="product__rating">
+                 </p>  */}
+                 <div className="product__rating">
                 {
                     Array(rating)
                     .fill(2)
@@ -41,9 +42,10 @@ console.log("basket content",basket)
 
                 </div>
                 
+                
             </div>
            <img src={image} alt=""/>
-           <button onClick={AddToBasket}> Add to Basket</button>
+           <button onClick={AddToBasket}>Booked Now</button>
         </div>
     )
 }

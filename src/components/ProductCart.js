@@ -17,7 +17,7 @@ function  ProductCart({id,title,image,price,rating}){
             <img src={image} alt=""/>
             <div>
                 <p>{title}</p>
-                <p>{price}</p>
+                {/* <p>{price}</p> */}
 
             </div>
             <div>
