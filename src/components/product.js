@@ -1,26 +1,43 @@
-import React from "react"
-import"./home.css"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import"./home.css";
 import {useStateValue} from "./StateProvider";
 
 
-function Product({id, title,image,price,rating}){
+function Product({ title,image,rating}){
+    const navigate = useNavigate() 
+
+    const handleSubmit  = (event) => {
+        event.preventDefault();
+        navigate("/booking")
+        alert('Booking page ')
+      }
+  
+
+      const onSubmit  = (event) => {
+        event.preventDefault();
+        navigate("/hoteldetail")
+        alert('hotel detail ')
+      }
+
+
      const [{basket}, dispatch] =useStateValue();
 console.log("basket content",basket)
 
-     const AddToBasket = () => {
-         dispatch({
-        type:"ADD_TO_BASKET",
-        item :{
-            id:id,
-            title:title,
-            image:image,
-            price:price,
-            rating:rating
+    //  const AddToBasket = () => {
+    //      dispatch({
+    //     type:"ADD_TO_BASKET",
+    //     item :{
+    //         id:id,
+    //         title:title,
+    //         image:image,
+    //          price:price,
+    //         rating:rating
 
         
-        }
-        })
-    }
+    //      }
+    //   })
+    //  }
 
     return(
         <div className="product">
@@ -45,7 +62,10 @@ console.log("basket content",basket)
                 
             </div>
            <img src={image} alt=""/>
-           <button onClick={AddToBasket}>Booked Now</button>
+           <button onClick={handleSubmit} type="submit" value="Submit" class="col-1-4">Booked Now</button>
+            {/* <button onClick={AddToBasket}>Booked Now</button> */} 
+
+            <button onClick={onSubmit}>Booked Now</button> 
         </div>
     )
 }

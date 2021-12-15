@@ -11,6 +11,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from'@mui/icons-material/ShoppingCart'
 import LocalShippingIcon from'@mui/icons-material/LocalShipping'
+import HotelIcon from '@mui/icons-material/Hotel';
+import RoomServiceIcon from '@mui/icons-material/RoomService';
 import { useStateValue } from './StateProvider';
 
 
@@ -58,11 +60,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
-  const [{basket},dispatch]= useStateValue();
-  console.log("my basket",basket)
+  // const [{basket},dispatch]= useStateValue();
+  // console.log("my basket",basket)
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static"  style={{backgroundColor:"darkcyan"}}>
+      <AppBar position="static"  style={{backgroundColor:"blue"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -99,8 +101,9 @@ export default function SearchAppBar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
             
-          > <LocalShippingIcon  style={{height:30,width:50}}/>
-         <ShoppingCartIcon style={{height:30, padding:20 ,width:50}} /><span>{basket?.length}</span>
+          > <HotelIcon style={{height:30,padding:20,width:50}}/>
+          <RoomServiceIcon  style={{height:30,padding:20,width:50}}/>
+         {/* <ShoppingCartIcon style={{height:30, padding:20 ,width:50}} /><span>{basket?.length}</span> */}
           
           </IconButton>
            

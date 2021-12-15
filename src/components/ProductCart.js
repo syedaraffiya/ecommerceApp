@@ -2,6 +2,7 @@ import React from "react";
 import { useStateValue } from "./StateProvider";
 
 function  ProductCart({id,title,image,price,rating}){
+   
 
     const [{basket},dispatch]=useStateValue();
 
