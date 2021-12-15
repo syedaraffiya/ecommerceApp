@@ -15,24 +15,14 @@ return(
            <li>
            contact
            </li>
-           <li>
-           contact
-           </li>
-           <li>
-           contact
-           </li>
+         
            </ul></div> 
     
     
     <div className="footer__linkarea" >
     <ul>
     
-           <li>
-          terms-condition
-           </li>
-           <li>
-           terms-condition
-           </li>
+         
            <li>
            terms-condition
            </li>
@@ -44,12 +34,7 @@ return(
     <div className="footer__linkarea">
     <ul>
      
-           <li>
-           location
-           </li>
-           <li>
-           location
-           </li>
+           
            <li>
            location
            </li>
@@ -61,12 +46,7 @@ return(
     <div className="footer__linkarea" >
     <ul>
        
-           <li>
-          services
-           </li>
-           <li>
-           services
-           </li>
+        
            <li>
            services
            </li>

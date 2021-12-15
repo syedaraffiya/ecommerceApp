@@ -1,8 +1,9 @@
-import  Hoteldetail from "./container/hoteldetail";
+
 import React from "react";
 import { BrowserRouter as Router, Route,  Routes } from "react-router-dom";
-import {  Login ,Home, Checkout, SignUp } from ".";
+import {  Login ,Home, SignUp } from ".";
 import Booking from "../screens/booking";
+import  Details from "../container/hoteldetail";
 
 
 export default function AppRouter() {
@@ -14,8 +15,10 @@ export default function AppRouter() {
           <Route index path="/" element={<SignUp />} />
           <Route index path="/login" element={<Login />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Checkout" element={<Checkout/>} />
-          <Route path="/hoteldetail" element={< Hoteldetail />} />
+         
+          <Route path="/hoteldetail" element={<Details />} />
+       
+
           <Route path="/booking" element={<Booking/>} />
          
         </Routes>

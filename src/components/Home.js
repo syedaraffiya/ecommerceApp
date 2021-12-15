@@ -4,7 +4,7 @@ import"./home.css";
 import   SearchAppBar  from './navbar';
 import Footer from "./footer"
 import { useNavigate } from "react-router-dom";
-//  import Navlinks from "./Navlinks";
+
 
  function Home(){
    
@@ -79,22 +79,22 @@ import { useNavigate } from "react-router-dom";
             <Product
             id="123"
             title="FiveStarHotel"
-             
+           
             rating={9} 
             image="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fforbestravelguide%2Ffiles%2F2019%2F02%2FFORBES-LondonMacauShowTheirStarPower-MandarinOrientalHydeParkLondon-CreditMandarinOrientalHydeParkLondon.jpg"/>
            
 
            <Product
-            id="123"
+            id="12"
             title="Park Lane Hotel"
-          
+           
             rating={8} 
             image="https://foto.hrsstatic.com/fotos/0/3/545/350/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F7%2F8%2F7%2F9%2F787912%2F787912_a_16952410.jpg/FReyGOXj7%2F7TPS%2F%2ByhIQig%3D%3D/520,346/6/THE_STANLEY_HOTEL_AND_SUITES-Port_Moresby-Aussenansicht-2-787912.jpg"/>
 
             <Product
             id="123"
             title="Royal Mount Hotel"
-         rating={9} 
+           rating={9} 
             image="https://pix10.agoda.net/hotelImages/8546401/0/23ec4a99e046fa3ebe94743b50dd19f0.jpg?ca=9&ce=1&s=1024x768"/>
 
 
@@ -111,7 +111,6 @@ import { useNavigate } from "react-router-dom";
             title=" Hilton Hotel"
           rating={7} 
             image="https://exp.cdn-hotels.com/hotels/2000000/1400000/1395300/1395252/421ce44c_z.jpg?impolicy=fcrop&w=500&h=333&q=medium"/>
-
 
 
             <Product

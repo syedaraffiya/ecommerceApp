@@ -62,7 +62,7 @@ function Login() {
                 <h1>Sign In </h1>
                 <form onSubmit={(e)=>loginuser(e)}>
                     <h4>E-mail</h4>
-                    <input value={email} type="email" onChange={(e)=> setEmail(e.target.value)}></input>
+                    <input value={email} type="email"placeholder="Email" onChange={(e)=> setEmail(e.target.value)}></input>
 
                     <h4>Password</h4>
 
